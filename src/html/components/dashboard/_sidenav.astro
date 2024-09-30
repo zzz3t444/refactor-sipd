@@ -1,247 +1,241 @@
 ---
-  import { convertPathToHtml } from "../../../utils/index.js";
-  const { path, mainPage, page } = Astro.props;
-  const htmlPath = convertPathToHtml(path);
-  import RekapIcons from "./assets/svg/RekapIcons.astro";
-  import Dashboard from "./assets/svg/Dashboard.astro";
-  import LocationIcons from "./assets/svg/location.astro";
+import { convertPathToHtml } from "../../../utils/index.js";
+const { path, mainPage, page } = Astro.props;
+const htmlPath = convertPathToHtml(path);
+import RekapIcons from "./assets/svg/RekapIcons.astro";
+import Dashboard from "./assets/svg/Dashboard.astro";
+import LocationIcons from "./assets/svg/location.astro";
 ---
 
-  <!--begin::Sidebar-->
-  <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
-    <!--begin::Sidebar Brand-->
-    <div class="sidebar-brand">
-      <!--begin::Brand Link-->
-      <a href={htmlPath + "/index.html"} class="brand-link">
-        <!--begin::Brand Image-->
-        <img src={path + "/assets/img/AdminLTELogo.png"} alt="AdminLTE Logo" class="brand-image opacity-75 shadow" />
-        <!--end::Brand Image-->
-        <!--begin::Brand Text-->
-        <span class="brand-text fw-light">AdminLTE 4</span>
-        <!--end::Brand Text-->
-      </a>
-      <!--end::Brand Link-->
-    </div>
-    <!--end::Sidebar Brand-->
-    <!--begin::Sidebar Wrapper-->
-    <div class="sidebar-wrapper">
-      <nav class="mt-2">
-        <!--begin::Sidebar Menu-->
-        <p class="text-light">MENU UTAMA</p>
-        <ul class="nav sidebar-menu flex-column gap-2" data-lte-toggle="treeview" role="menu" data-accordion="false">
-          <li>
-            <a href={htmlPath + "/generate/theme.html"} class:list={["nav-link", page === "theme-generate" && "active"]}>
-              <Dashboard />
-              <p>Dashboard</p>
-            </a>
-          </li>
+<!--begin::Sidebar-->
+<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+  <!--begin::Sidebar Brand-->
+  <div class="sidebar-brand">
+    <!--begin::Brand Link-->
+    <a href={htmlPath + "/index.html"} class="brand-link">
+      <img src="https://sipd.go.id/run2/assets/logo.png" width="50px" alt="" />
+      <span class="brand-text fw-light">SIPD</span>
+    </a>
+    <!--end::Brand Link-->
+  </div>
 
-          <li class="nav-item">
-            <a href={htmlPath + "/generate/theme.html"} class:list={["nav-link", page === "theme-generate" && "active"]}>
-              <RekapIcons />
-              <p>Rekap</p>
-            </a>
-          </li>
-          <li class:list={["nav-item", mainPage === "components" && "menu-open"]}>
-            <a href="#" class:list={["nav-link", mainPage === "components" && "active"]}>
-              <i class="nav-icon bi bi-ui-checks-grid"></i>
-              <p>
-                Informasi Pembangu...
-                <i class="nav-arrow bi bi-chevron-right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href={htmlPath + "/docs/components/main-header.html"} class:list={["nav-link", page === "main-header" && "active"]}>
-                  <p>Tematik</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href={htmlPath + "/docs/components/main-sidebar.html"} class:list={["nav-link", page === "main-sidebar" && "active"]}>
-                  <p>Bidang Urusan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href={htmlPath + "/docs/components/main-sidebar.html"} class:list={["nav-link", page === "main-sidebar" && "active"]}>
-                  <p>Sumber Pendanaan</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+  <div class="sidebar-wrapper">
+    <nav class="mt-2">
+      <!--begin::Sidebar Menu-->
+      <p class="text-light p-3">MENU UTAMA</p>
+      <ul class="nav sidebar-menu flex-column gap-2" data-lte-toggle="treeview" role="menu" data-accordion="false">
+        <li>
+          <a href={htmlPath + "/generate/theme.html"} class:list={["nav-link", page === "theme-generate" && "active"]}>
+            <Dashboard />
+            <p>Dashboard</p>
+          </a>
+        </li>
 
-          <li class="nav-header">PROVINSI</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <div class="d-flex align-items-center gap-2">
-                <LocationIcons />
-                ACEH
-              </div>
-              <p>
-                <i class="nav-arrow bi bi-chevron-right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href=""></a>
-                <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href={htmlPath + "/generate/theme.html"} class:list={["nav-link", page === "theme-generate" && "active"]}>
+            <RekapIcons />
+            <p>Rekap</p>
+          </a>
+        </li>
+        <li class:list={["nav-item", mainPage === "components" && "menu-open"]}>
+          <a href="#" class:list={["nav-link", mainPage === "components" && "active"]}>
+            <i class="nav-icon bi bi-ui-checks-grid"></i>
+            <p>
+              Informasi Pembangu...
+              <i class="nav-arrow bi bi-chevron-right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href={htmlPath + "/docs/components/main-header.html"} class:list={["nav-link", page === "main-header" && "active"]}>
+                <p>Tematik</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href={htmlPath + "/docs/components/main-sidebar.html"} class:list={["nav-link", page === "main-sidebar" && "active"]}>
+                <p>Bidang Urusan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href={htmlPath + "/docs/components/main-sidebar.html"} class:list={["nav-link", page === "main-sidebar" && "active"]}>
+                <p>Sumber Pendanaan</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-header">PROVINSI</li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <div class="d-flex align-items-center gap-2">
+              <LocationIcons />
+              ACEH
+            </div>
+            <p>
+              <i class="nav-arrow bi bi-chevron-right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href=""></a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href={htmlPath + "/examples/login.html"} class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Login</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href={htmlPath + "/examples/register.html"} class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Register</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href={htmlPath + "/docs/introduction.html"} class:list={["nav-link", page === "introduction" && "active"]}>
+                <p>Data Provinsi</p>
+              </a>
+              <a href="#" class="nav-link">
+                <p>
+                  Data Per kab/Kota
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
+              </a>
+
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href={htmlPath + "/examples/login-v2.html"} class="nav-link">
+                    <p>REKAP ACEH</p>
+                  </a>
                   <li class="nav-item">
-                    <a href={htmlPath + "/examples/login.html"} class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Login</p>
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH SELATAN</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href={htmlPath + "/examples/register.html"} class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Register</p>
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH TENGGARA</p>
                     </a>
                   </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href={htmlPath + "/docs/introduction.html"} class:list={["nav-link", page === "introduction" && "active"]}>
-                  <p>Data Provinsi</p>
-                </a>
-                <a href="#" class="nav-link">
-                  <p>
-                    Data Per kab/Kota
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-
-                <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href={htmlPath + "/examples/login-v2.html"} class="nav-link">
-                      <p>REKAP ACEH</p>
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH TIMUR</p>
                     </a>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH SELATAN</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH TENGGARA</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH TIMUR</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH TENGAH</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH BARAT</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH BESAR</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. PIDIE</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH UTARA</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. SIMEULUE</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH SINGKIL</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. BIREUEN</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH BARAT DAYA</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. GAYO LUES</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH JAYA</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. NAGAN RAYA</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. ACEH TAMIANG</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. BENER MERIAH</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KAB. PIDIE JAYA</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KOTA BANDA ACEH</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KOTA SABANG</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KOTA LHOKSEUMAWE</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KOTA LANGSA</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
-                        <p>KOTA SUBULUSSALAM</p>
-                      </a>
-                    </li>
-
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH TENGAH</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH BARAT</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH BESAR</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. PIDIE</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH UTARA</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. SIMEULUE</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH SINGKIL</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. BIREUEN</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH BARAT DAYA</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. GAYO LUES</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH JAYA</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. NAGAN RAYA</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. ACEH TAMIANG</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. BENER MERIAH</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KAB. PIDIE JAYA</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KOTA BANDA ACEH</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KOTA SABANG</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KOTA LHOKSEUMAWE</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KOTA LANGSA</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href={htmlPath + "/examples/register-v2.html"} class="nav-link">
+                      <p>KOTA SUBULUSSALAM</p>
+                    </a>
+                  </li>
 
                   <!-- ////////////////////////////////////////////// -->
-                </ul>
-              </li>
-            </ul>
-          </li>
+                </li>
+              </ul>
+            </li>
+          </ul>
 
           <li class="nav-item">
             <a href="#" class="nav-link">
               <div class="d-flex align-items-center gap-2">
                 <LocationIcons />
-                ACEH
+                SUMATERA UTARA
               </div>
               <p>
                 <i class="nav-arrow bi bi-chevron-right"></i>
@@ -379,97 +373,43 @@
                         <p>KOTA SUBULUSSALAM</p>
                       </a>
                     </li>
+                  </li>
                 </ul>
               </li>
             </ul>
-          </li>
 
-          <li class="nav-header">DOCUMENTATIONS</li>
-          <li class="nav-item">
-            <a href={htmlPath + "/docs/introduction.html"} class:list={["nav-link", page === "introduction" && "active"]}>
-              <i class="nav-icon bi bi-download"></i>
-              <p>Installation</p>
-            </a>
+            <li class:list={["nav-item", mainPage === "dashboard" && "menu-open"]}>
+              <a href="#" class:list={["nav-link", mainPage === "dashboard" && "active"]}>
+                <i class="nav-icon bi bi-speedometer"></i>
+                <p>
+                  Dashboard
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href={htmlPath + "/index.html"} class:list={["nav-link", page === "index" && "active"]}>
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Dashboard v1</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href={htmlPath + "/index2.html"} class:list={["nav-link", page === "index2" && "active"]}>
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Dashboard v2</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href={htmlPath + "/index3.html"} class:list={["nav-link", page === "index3" && "active"]}>
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Dashboard v3</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
           </li>
-          <li class="nav-item">
-            <a href={htmlPath + "/docs/color-mode.html"} class:list={["nav-link", page === "color-mode" && "active"]}>
-              <i class="nav-icon bi bi-star-half"></i>
-              <p>Color Mode</p>
-            </a>
-          </li>
-          <li class:list={["nav-item", mainPage === "components" && "menu-open"]}>
-            <a href="#" class:list={["nav-link", mainPage === "components" && "active"]}>
-              <i class="nav-icon bi bi-ui-checks-grid"></i>
-              <p>
-                Components
-                <i class="nav-arrow bi bi-chevron-right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href={htmlPath + "/docs/components/main-header.html"} class:list={["nav-link", page === "main-header" && "active"]}>
-                  <i class="nav-icon bi bi-circle"></i>
-                  <p>Main Header</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href={htmlPath + "/docs/components/main-sidebar.html"} class:list={["nav-link", page === "main-sidebar" && "active"]}>
-                  <i class="nav-icon bi bi-circle"></i>
-                  <p>Main Sidebar</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-header">LABELS</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon bi bi-circle text-danger"></i>
-              <p class="text">Important</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon bi bi-circle text-warning"></i>
-              <p>Warning</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon bi bi-circle text-info"></i>
-              <p>Informational</p>
-            </a>
-          </li>
-          <li class:list={["nav-item", mainPage === "dashboard" && "menu-open"]}>
-            <a href="#" class:list={["nav-link", mainPage === "dashboard" && "active"]}>
-              <i class="nav-icon bi bi-speedometer"></i>
-              <p>
-                Dashboard
-                <i class="nav-arrow bi bi-chevron-right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href={htmlPath + "/index.html"} class:list={["nav-link", page === "index" && "active"]}>
-                  <i class="nav-icon bi bi-circle"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href={htmlPath + "/index2.html"} class:list={["nav-link", page === "index2" && "active"]}>
-                  <i class="nav-icon bi bi-circle"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href={htmlPath + "/index3.html"} class:list={["nav-link", page === "index3" && "active"]}>
-                  <i class="nav-icon bi bi-circle"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </aside>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
