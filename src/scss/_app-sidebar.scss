@@ -190,7 +190,7 @@
         transform: translateY(-50%) #{"/*rtl:append:rotate(180deg)*/"};
         animation-name: fadeIn;
         animation-duration: $lte-transition-speed;
-        animation-fill-mode: both;
+        // animation-fill-mode: both;
       }
     }
   }
